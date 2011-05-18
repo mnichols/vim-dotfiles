@@ -523,7 +523,8 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 " }}}
 
 " Common abbreviations / misspellings {{{
-source ~/.vim/autocorrect.vim
+" uncomment following line for autocorrection (if you have autocorrect)
+" source ~/.vim/autocorrect.vim
 " }}}
 
 " Extra vi-compatibility {{{
