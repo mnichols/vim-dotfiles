@@ -79,6 +79,7 @@ nnoremap <C-y> 2<C-y>
 " }}}
 
 " Folding rules {{{
+set nofoldenable                " disable folding
 " set foldenable                  " enable folding
 " set foldcolumn=2                " add a fold column
 " set foldmethod=marker           " detect triple-{ style fold markers
