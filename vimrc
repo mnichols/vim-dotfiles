@@ -486,6 +486,13 @@ if has("autocmd")
         autocmd filetype javascript setlocal foldmethod=marker foldmarker={,}
     augroup end "}}}
 
+    augroup coffee_files "{{{
+        au!
+        " autocompile coffee scripts
+        " autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow
+    augroup end "}}}
+
+
     augroup textile_files "{{{
         au!
 
@@ -588,3 +595,11 @@ else
     let g:solarized_termcolors=256
     colorscheme solarized
 endif
+
+" set localvimrc settings
+
+" define default for sandbox {{{2
+let g:localvimrc_sandbox = 0  " :map doesnt work in sandbox so turn it off
+
+" define default for asking {{{2
+let g:localvimrc_ask = 0 " trust me...
