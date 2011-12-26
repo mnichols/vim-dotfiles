@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/mnichols/dev/nodify/test'
 let g:netrw_dirhist_2='/home/mnichols/dev/kobe-pos/public/src'
 let g:netrw_dirhist_3='/home/mnichols/dev/kobe-pos/public/coffeescripts'
+let g:netrw_dirhist_4='/home/mnichols/oss/coffeekup/lib'
+let g:netrw_dirhist_5='/home/mnichols/oss/coffeekup/examples/browser/sugar/templates/nested/deep'
+let g:netrw_dirhist_6='/home/mnichols/dev/kobe-pos/templates/tables'
+let g:netrw_dirhist_7='/home/mnichols/dev/kobe-pos'
