@@ -105,6 +105,28 @@ call <SID>HtmlIndentPush('u')
 call <SID>HtmlIndentPush('ul')
 call <SID>HtmlIndentPush('var')
 
+" added html5 elements https://gist.github.com/256840
+call <SID>HtmlIndentPush('article')
+call <SID>HtmlIndentPush('aside')
+call <SID>HtmlIndentPush('audio')
+call <SID>HtmlIndentPush('canvas')
+call <SID>HtmlIndentPush('details')
+call <SID>HtmlIndentPush('figcaption')
+call <SID>HtmlIndentPush('figure')
+call <SID>HtmlIndentPush('footer')
+call <SID>HtmlIndentPush('header')
+call <SID>HtmlIndentPush('hgroup')
+call <SID>HtmlIndentPush('mark')
+call <SID>HtmlIndentPush('menu')
+call <SID>HtmlIndentPush('meter')
+call <SID>HtmlIndentPush('nav')
+call <SID>HtmlIndentPush('output')
+call <SID>HtmlIndentPush('progress')
+call <SID>HtmlIndentPush('section')
+call <SID>HtmlIndentPush('summary')
+call <SID>HtmlIndentPush('time')
+call <SID>HtmlIndentPush('video')
+
 
 " [-- <ELEMENT ? O O ...> --]
 if !exists('g:html_indent_strict')
