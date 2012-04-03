@@ -298,6 +298,10 @@ nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
 nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
 nmap <leader>N :NERDTreeClose<CR>
 
+" Quickly Create Open and Close HTML Tags
+" type table,,, to get <table></table> automatically close a tag
+imap ,,, <esc>bdwa<<esc>pa><cr></<esc>pa><esc>kA
+
 " Store the bookmarks file
 let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
 
