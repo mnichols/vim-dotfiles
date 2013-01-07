@@ -1,9 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/mnichols/temp/angular-yui-spa'
-let g:netrw_dirhist_2='/home/mnichols/temp/angular-yui-spa/app/js'
-let g:netrw_dirhist_3='/home/mnichols/temp/angular-yui-spa/app'
-let g:netrw_dirhist_4='/home/mnichols/dev/spa/app/js/controllers'
-let g:netrw_dirhist_5='/home/mnichols/dev/kobe-pos/test/resources'
-let g:netrw_dirhist_6='/home/mnichols/dev/kobe-pos-mobile/resources'
-let g:netrw_dirhist_7='/home/mnichols/dev/kobe-pos/ts'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/mnichols/dev/angularjs-yui-testacular/test'
