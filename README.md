@@ -17,3 +17,21 @@ git add .
 git commit -m 'install {repo_name} as submod'
 
 ```
+
+
+### Windows setup
+
+--> http://stackoverflow.com/a/7643722/331035
+
+```bash
+
+cd "%UserProfile%"
+rmdir vimfiles /S /Q
+git clone http://github.com/mnichols/vim-dotfiles.git vimfiles
+del _vimrc
+mklink _vimrc vimfiles\vimrc
+cd vimfiles
+git submodule init
+git submodule update
+
+```
