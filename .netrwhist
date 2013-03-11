@@ -1,7 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/mnichols/dev/angularjs-yui-testacular/test'
 let g:netrw_dirhist_2='/home/mnichols/dev/spa/app/js'
 let g:netrw_dirhist_3='/home/mnichols/dev/spa/app'
 let g:netrw_dirhist_4='/home/mnichols/dev/blog/src/documents/posts'
 let g:netrw_dirhist_5='/home/mnichols/dev/kobe-pos/test'
+let g:netrw_dirhist_6='/Users/mnichols/dev/surgehub-ios/SurgeHub.Web/Mobile/www/js/app'
+let g:netrw_dirhist_7='/Users/mnichols/blog/src/documents'
