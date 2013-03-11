@@ -37,15 +37,6 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "bundle/pyflakes"]
-	path = bundle/pyflakes
-	url = https://github.com/mitechie/pyflakes-pathogen.git
-[submodule "bundle/pydoc.vim"]
-	path = bundle/pydoc.vim
-	url = https://github.com/fs111/pydoc.vim.git
-[submodule "bundle/rope-vim"]
-	path = bundle/rope-vim
-	url = https://github.com/sontek/rope-vim.git
 [submodule "bundle/TaskList"]
 	path = bundle/TaskList
 	url = https://github.com/vim-scripts/TaskList.vim
