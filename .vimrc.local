@@ -1,0 +1,51 @@
+set gfn=Menlo\ Sans\ Mono\ 22
+
+" set indentation for javascript
+autocmd FileType javascript setlocal sw=4 ts=4 sts=4
+autocmd FileType stylus setlocal sw=4 ts=4 sts=4
+autocmd FileType css setlocal sw=4 ts=4 sts=4
+
+" --this backs out these mappings
+" --found in the spf13 .vimrc
+"
+" noremap $ g$
+" noremap <End> g<End>
+" noremap 0 g0
+" noremap <Home> g<Home>
+" noremap ^ g^
+unmap $
+unmap <End>
+unmap 0
+unmap <Home>
+unmap ^
+
+
+" solarized theme in terminal
+syntax enable
+let g:solarized_termtrans = 1
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+
+" disable swp files
+set noswapfile
+
+" In visual mode, use Y to copy to system clipboard
+vnoremap Y "*y
+
+" In normal mode, do the same with the current line
+nnoremap Y "*yy
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>" like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
