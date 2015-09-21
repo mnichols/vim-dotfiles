@@ -22,9 +22,16 @@ unmap ^
 
 " solarized theme in terminal
 syntax enable
-let g:solarized_termtrans = 1
-let g:solarized_termcolors=256
-set background=dark
+
+set background=light
+if !has("gui_running")
+    let g:solarized_termtrans = 1
+    let g:solarized_termcolors=256
+    set background=dark
+endif
+
+set t_Co=256
+
 colorscheme solarized
 
 " disable swp files
@@ -49,3 +56,12 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
+
+
+" throw snippets into this folder
+let g:neosnippet#snippets_directory='~/custom-user-snippets'
+
+au BufNewFile,BufRead *.tag setlocal ft=html
+
+" see https://github.com/Shougo/neocomplete.vim#requirements
+let g:neocomplete#enable_at_startup = 1
