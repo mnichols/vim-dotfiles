@@ -2,6 +2,7 @@ set gfn=Menlo\ Sans\ Mono\ 22
 
 " set indentation for javascript
 autocmd FileType javascript setlocal sw=4 ts=4 sts=4
+autocmd FileType coffee setlocal sw=2 ts=2 sts=2
 autocmd FileType stylus setlocal sw=4 ts=4 sts=4
 autocmd FileType css setlocal sw=4 ts=4 sts=4
 
@@ -65,3 +66,9 @@ au BufNewFile,BufRead *.tag setlocal ft=html
 
 " see https://github.com/Shougo/neocomplete.vim#requirements
 let g:neocomplete#enable_at_startup = 1
+
+" see http://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
+set clipboard=unnamed
+
+" set pwd to current folder
+autocmd vimenter * silent! lcd %:p:h
