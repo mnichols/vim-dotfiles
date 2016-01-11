@@ -1,4 +1,4 @@
-set gfn=Menlo\ Sans\ Mono\ 22
+set laststatus=2
 
 " set indentation for javascript
 autocmd FileType javascript setlocal sw=4 ts=4 sts=4
@@ -72,3 +72,6 @@ set clipboard=unnamed
 
 " set pwd to current folder
 autocmd vimenter * silent! lcd %:p:h
+
+UnBundle 'jiangmiao/auto-pairs'
+UnBundle 'pangloss/vim-javascript'
