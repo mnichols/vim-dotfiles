@@ -1,3 +1,6 @@
+"set encoding=utf-8  " The encoding displayed.
+"set fileencoding=utf-8  " The encoding written to file.
+
 set laststatus=2
 
 " set indentation for javascript
@@ -5,6 +8,7 @@ autocmd FileType javascript setlocal sw=4 ts=4 sts=4
 autocmd FileType coffee setlocal sw=2 ts=2 sts=2
 autocmd FileType stylus setlocal sw=4 ts=4 sts=4
 autocmd FileType css setlocal sw=4 ts=4 sts=4
+
 
 " --this backs out these mappings
 " --found in the spf13 .vimrc
@@ -62,7 +66,8 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 " throw snippets into this folder
 let g:neosnippet#snippets_directory='~/custom-user-snippets'
 
-au BufNewFile,BufRead *.tag setlocal ft=html
+"au BufNewFile,BufRead *.tag setlocal ft=html
+au BufNewFile,BufRead *.tag setlocal ft=javascript
 
 " see https://github.com/Shougo/neocomplete.vim#requirements
 let g:neocomplete#enable_at_startup = 1
@@ -73,5 +78,6 @@ set clipboard=unnamed
 " set pwd to current folder
 autocmd vimenter * silent! lcd %:p:h
 
-UnBundle 'jiangmiao/auto-pairs'
-UnBundle 'pangloss/vim-javascript'
+"UnBundle 'jiangmiao/auto-pairs'
+"UnBundle 'pangloss/vim-javascript'
+"UnBundle 'reedes/vim-textobj-quote'
