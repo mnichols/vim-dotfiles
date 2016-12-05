@@ -28,7 +28,7 @@ unmap ^
 " solarized theme in terminal
 syntax enable
 
-set background=light
+set background=dark
 if !has("gui_running")
     let g:solarized_termtrans = 1
     let g:solarized_termcolors=256
@@ -77,6 +77,7 @@ set clipboard=unnamed
 
 " set pwd to current folder
 autocmd vimenter * silent! lcd %:p:h
+
 
 "UnBundle 'jiangmiao/auto-pairs'
 "UnBundle 'pangloss/vim-javascript'
