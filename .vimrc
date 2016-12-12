@@ -10,46 +10,26 @@ set nobackup
 set noswapfile
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle init
-"" Install Plugins:
 
-"" Launch vim and run :PluginInstall
-"" To install from command line: vim +PluginInstall +qall
+" Plug: https://github.com/junegunn/vim-plug
 
-"" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" Add an UnBundle command {
-    function! UnBundle(arg, ...)
-      let bundle = vundle#config#init_bundle(a:arg, a:000)
-      call filter(g:vundle#bundles, 'v:val["name_spec"] != "' . a:arg . '"')
-    endfunction
-
-    com! -nargs=+         UnBundle
-    \ call UnBundle(<args>)
-" }
-
-"" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 
 "" All the bundles you likey
-Plugin 'tpope/vim-fugitive'
-Plugin 'flazz/vim-colorschemes'
+Plug 'tpope/vim-fugitive'
+Plug 'flazz/vim-colorschemes'
 
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'othree/es.next.syntax.vim'
-Plugin 'elzr/vim-json'
-Plugin 'heavenshell/vim-jsdoc'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'othree/es.next.syntax.vim'
+Plug 'elzr/vim-json'
+Plug 'heavenshell/vim-jsdoc'
 
+call plug#end()
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-" END VUNDLE
+" END Plug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 
