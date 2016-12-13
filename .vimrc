@@ -1,5 +1,5 @@
 set nocompatible    " be iMproved, required
-filetype off        " required...see end of Vundle init
+set clipboard+=unnamedplus
 
 syntax enable
 set title
@@ -40,14 +40,17 @@ colorscheme kolor
 set cursorline
 
 " Default Colors for CursorLine
-highlight  CursorLine ctermbg=Yellow ctermfg=None
+" keep this in sync with InsertLeave autocmd below
+
+" highlight CursorLine ctermfg=LightGray ctermbg=Black cterm=bold guifg=white guibg=black gui=bold
+highlight LineNr ctermfg=LightBlue ctermbg=Black  
+highlight CursorLineNr ctermfg=Yellow ctermbg=Black cterm=bold guifg=yellow guibg=black gui=bold
 
 " Change Color when entering Insert Mode
-autocmd InsertEnter * highlight  CursorLine ctermbg=Green ctermfg=Red
+" autocmd InsertEnter * highlight  CursorLine ctermbg=White ctermfg=Black cterm=bold guifg=black guibg=white gui=bold
 
-" Revert Color to default when leaving Insert Mode
-autocmd InsertLeave * highlight  CursorLine ctermbg=Yellow ctermfg=None
-
+" Revert Color to default when leaving Insert Mode (see config for CursorLine highlight above)
+" autocmd InsertLeave * highlight  CursorLine ctermfg=White ctermbg=Black cterm=bold guifg=white guibg=black gui=bold
 
 " Behaviors
 
@@ -58,8 +61,8 @@ set hidden
 set autochdir                   " always have pwd as current file
 
 let g:netrw_banner=0            " you dont need the banner in netrw
-let g:netrw_browse_split = 1    " open files in horizontal split
-let g:netrw_winsize = 50        " 25% of window
+" let g:netrw_browse_split = 1    " open files in horizontal split
+" let g:netrw_winsize = 50        " 25% of window
 
 "" General
 set autoindent
@@ -96,17 +99,20 @@ set visualbell          " shhhh
 "" Line numbers
 
 set number
-set numberwidth=4
+set numberwidth=6
 set relativenumber
 
 "" Text wrapping
 
 set nowrap
 set linebreak
-
+set textwidth=0
+set wrapmargin=0
 
 " Key Mappings
 
+" Get me out of here please key
+inoremap <c-c> <esc>
 
 "" Map leader
 
@@ -126,7 +132,4 @@ imap <c-d> <esc>ddi
 
 " uppercase the things, leave cursor at end
 imap <c-u> <esc>gUiwea
-
 nmap <c-u> g~iwe
-
-
