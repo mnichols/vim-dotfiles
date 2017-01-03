@@ -25,12 +25,22 @@ Plug 'mxw/vim-jsx'
 Plug 'othree/es.next.syntax.vim'
 Plug 'elzr/vim-json'
 Plug 'heavenshell/vim-jsdoc'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
 filetype plugin indent on    " required
 " END Plug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-easy-align mapping
+"" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+"" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 " Colors
 
 colorscheme kolor
@@ -54,8 +64,8 @@ highlight CursorLineNr ctermfg=Yellow ctermbg=Black cterm=bold guifg=yellow guib
 
 " Behaviors
 
-"" buffers
-set hidden 
+"" buffers...be careful turning this on...
+set nohidden 
 
 "" File
 set autochdir                   " always have pwd as current file
@@ -72,8 +82,9 @@ set expandtab     " spaces, not tabs
 set hlsearch      " highlight search terms
 set incsearch     " show search matches as you type
 set ignorecase    " ignore case when searching
-set matchtime=10  " how long to show matching parens (10th of a sec)
-set smartcase "
+set matchtime=5  " how long to show matching parens (10th of a sec)
+set ruler
+set smartcase 
 set shiftround    " for things like > to move all the selected items
 set shiftwidth=4
 set showmatch 
