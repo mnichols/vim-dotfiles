@@ -28,18 +28,68 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/vim-easy-align'
+Plug 'davejlong/cf-utils.vim'
+Plug 'junegunn/fzf'
+Plug 'fatih/vim-go'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'neomake/neomake'
+Plug 'jaawerth/nrun.vim'
+Plug 'stephpy/vim-yaml'
+Plug 'airblade/vim-rooter'
 
 call plug#end()
 
 filetype plugin indent on    " required
 " END Plug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" vim-rooter config
+" Dont override autochdir
+let g:rooter_manual_only = 1
+function! Reflex (file)
+  let rootdir = FindRootDirectory()
+  let dotreflex = rootdir.'/.reflex'
+  if filereadable(dotreflex)
+    let cmd = ('echo $(date)-'.a:file.' > '.dotreflex)
+    call system(cmd)
+  endif
+endfunction
+" Put this command _after_ any Neomake listeners
+" autocmd! BufWritePost * call Reflex(expand('%:p'))
+
+
+
 " vim-easy-align mapping
 "" Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
 "" Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" editorconfig plugin config
+" https://github.com/editorconfig/editorconfig-vim#recommended-options
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
+
+" nrun config
+" https://github.com/jaawerth/nrun.vim#with-neovim--neomake
+" you can set your enabled makers globally (like below) or on the buffer level as part of an autocmd - see Neomake docs for details
+let g:neomake_javascript_enabled_makers = ['standard']
+" let g:neomake_javascript_enabled_makers = ['eslint', 'standard']
+let g:neomake_error_sign = {'text': '❌', 'texthl': 'NeomakeErrorSign' }
+let g:neomake_warning_sign = {'text': '⚠️', 'texthl': 'NeomakeWarningSign' }
+
+" neomake config
+" when switching/opening a JS buffer, set neomake's eslint path, and enable it as a maker
+au BufEnter *.js let b:neomake_javascript_eslint_exe = nrun#Which('eslint')
+au BufEnter *.jsx let b:neomake_javascript_eslint_exe = nrun#Which('eslint')
+au BufEnter *.js let b:neomake_javascript_standard_exe = nrun#Which('standard')
+au BufEnter *.jsx let b:neomake_javascript_standard_exe = nrun#Which('standard')
+autocmd! BufEnter,BufWritePost * Neomake
+
+
+"autocmd! BufWritePost * call Reflex(expand('%:p'))
+
 
 " Colors
 
@@ -86,7 +136,7 @@ set matchtime=5  " how long to show matching parens (10th of a sec)
 set ruler
 set smartcase 
 set shiftround    " for things like > to move all the selected items
-set shiftwidth=4
+set shiftwidth=2
 set showmatch 
 set smartcase     " ignore case if search pattern is all lowercase,
                   "    case-sensitive otherwise
